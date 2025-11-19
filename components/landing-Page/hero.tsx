@@ -6,6 +6,7 @@ import TailwindCSS from "../icons/tailwind-css";
 import { BrowseComponentsButton } from "../ui/browse-button";
 import { BrowseBlocksButton } from "../ui/browse-blocks";
 import Features from "../landing-Page/features";
+import { Link } from "next-view-transitions";
 const hero = () => {
   return (
     <div className="mx-auto w-full max-w-7xl min-h-screen flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 px-4 sm:px-6 md:py-16 lg:py-20">
@@ -102,6 +103,30 @@ const hero = () => {
           </span>
           <div className="w-full h-48 rounded-xl border border-zinc-200 dark:border-zinc-800 flex items-center justify-center">
             {/* AI INPUT */}
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="w-full grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          <div className="w-full">
+            <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+              Button
+            </span>
+          </div>
+
+          <div className="w-full h-48 rounded-xl border border-zinc-200 dark:border-zinc-800 flex flex-col gap-3 items-center justify-center">
+            {/* AI INPUT */}
+            <Link href={"/docs/components/button"}>{/* Buttons */}</Link>
+            <Link href={"docs/components/button"}>{/* Buttons */}</Link>
+          </div>
+          <div className="w-full">
+            <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+              Input
+            </span>
+            <Link href={"docs/components/input"}>{/* Input */}</Link>
           </div>
         </motion.div>
       </div>
