@@ -15,7 +15,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // --- Types ---
 
-type ModelType = 'GPT-4' | 'Claude 3.5' | 'Gemini Pro';
+type ModelType = 'Model 1' | 'Model 2' | 'Model 3';
 
 interface AIInput04Props {
   onSubmit: (text: string, attachments: File[], model: ModelType) => void;
@@ -60,7 +60,7 @@ const AIInput_04: FC<AIInput04Props> = ({
   const [input, setInput] = useState('');
   const [isFocused, setIsFocused] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedModel, setSelectedModel] = useState<ModelType>('GPT-4');
+  const [selectedModel, setSelectedModel] = useState<ModelType>('Model 1');
   const [isModelOpen, setIsModelOpen] = useState(false);
   const [attachments, setAttachments] = useState<AttachmentMeta[]>([]);
   
@@ -217,7 +217,7 @@ const AIInput_04: FC<AIInput04Props> = ({
                       rounded-xl shadow-xl
                     "
                   >
-                    {['GPT-4', 'Claude 3.5', 'Gemini Pro'].map((m) => (
+                    {['Model 1', 'Model 2', 'Model 3'].map((m) => (
                       <button
                         key={m}
                         onClick={() => { setSelectedModel(m as ModelType); setIsModelOpen(false); }}
